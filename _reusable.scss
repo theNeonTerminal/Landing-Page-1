@@ -1,0 +1,159 @@
+@mixin center(){display: flex; justify-content: center; align-items: center;}
+
+
+.big-cta, .CTA{
+    border: 2px solid $primary_accent;
+    color: $primary_accent;
+    background-color: transparent;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: no-wrap;
+    padding: 0 75px;
+    height: 55px;
+    font-weight: bold; font-size: 16px;
+    cursor: pointer;
+}
+// .CTA{
+//     border: 1px solid $primary_accent;
+//     border-radius: 16px;
+//     padding: 0 25px;
+//     height: 55px;
+//     text-align: center;
+//     // line-height: 55px;
+//     cursor: pointer;
+// }
+.CTA{padding: 0 25px;}
+.show{
+        // width: 90%;
+        height: 100%;
+        display: flex; justify-content: center; align-items: center;
+        color: $primary_accent;
+        padding-left: 4%; padding-right: 5%;
+        .container{
+            border: 1px solid;
+            border-radius: 16px;
+            height: 70%;
+            width: 100%;
+            .circles{
+                padding: 5px;
+                display: flex;
+                .circle{
+                    width: 8px; height: 8px;
+                    border-radius: 50%;
+                    margin: 0 5px;
+                    background-color: $primary_accent
+                }
+            }
+            .secondary{
+                border: 1px solid;
+                margin: 0 10px;
+                height: 93%; width: 95%;
+                display: flex;
+                .left{
+                    border-right: 1px solid;
+                    height: 100%;
+                    width: 25%;
+                }
+                .right{
+                    width: 75%; height: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    place-items: center;
+                    .card { 
+                        width: 80%; height: 80%;
+                        border: 1px solid;
+                        border-radius: 16px;
+                    }
+                }
+            }
+        }
+}
+
+.range-wrapper {
+    position: relative;
+    padding-bottom: 40px;
+
+    .custom-range {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+        cursor: pointer;
+        &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            background: #ffffff;
+            margin-top: -8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    }
+
+    .range-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding: 0 5px;
+
+        span {
+            font-size: 0.85rem;
+            position: relative;
+            padding-top: 10px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 2px;
+                height: 8px;
+                background: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    input { opacity: 0; width: 0; height: 0; }
+    .slider {
+        position: absolute; cursor: pointer;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(255,255,255,0.3);
+        transition: .4s; border-radius: 34px;
+        &:before {
+            position: absolute; content: "";
+            height: 18px; width: 18px; left: 3px; bottom: 3px;
+            background-color: $secondary; transition: .4s; border-radius: 50%;
+        }
+    }
+    input:checked + .slider { background-color: white; }
+    input:checked + .slider:before { transform: translateX(26px); }
+}
+
+img {max-width: 100%; height: auto;}
+body {overflow-x: clip;}
+
+section, .hero, .trusted, .facilities, .comments, .pricing, .faq, footer {
+  padding-inline: clamp(1rem, 4vw, 6rem);
+}
+
+img {
+    max-width: 100%; 
+    height: auto; 
+    max-height: 50vh; 
+    object-fit: contain; 
+    display: block;
+}
+
+.small {font-size: 14px;}
+.title{font-size: 24px; font-weight: bold;}

@@ -1,0 +1,178 @@
+// @media (max-width: 840px){
+//     nav{
+//         height: 40px;
+//         gap: 0.5rem;
+//         a{font-size: 12px;}
+//         .logo{font-size: 12px;}
+//         .sign{font-size: 14px; padding: 0 10px;}
+//     }
+// }
+
+// @media (max-width: 800px){
+//     .hero{
+//         height: 120vh;
+//         grid-template-columns: none;
+//         grid-template-rows: 1fr 1fr;
+//         .titles{
+//             h2{font-size: 28px; padding: 0 5%;}
+//             p{font-size: 12px;}
+//         }
+//     }
+//     .trusted{
+//         .companies{display: grid;
+//         grid-template-columns: 1fr 1fr 1fr;}
+//     }
+//     .facilities{
+//         .card{
+//             .circle{width: 100px; height: 100px;}
+//             .title{font-size: 20px;}
+//         }
+//     }
+
+//     //! Reusable
+//     .small{font-size: 12px}
+//     .title{font-size: 20px;}
+// }
+
+// @media (max-width: 767px){
+//     nav{display: none;}
+// }
+
+////////////////////////////////////
+
+html, body {
+    overflow-x: clip;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding-top: 60px;
+        text-align: center;
+
+        .titles {
+            padding: 0 5%;
+            margin-bottom: 30px;
+        }
+
+        .cta {
+            justify-content: center;
+        }
+
+        .show {
+            height: 400px;
+        }
+    }
+
+    .comments .comment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing .cards {
+        flex-wrap: wrap;
+        .card {
+            flex: 0 1 45%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    nav {
+        height: auto;
+        padding: 15px 5%;
+        justify-content: space-between;
+
+        a { display: none; }
+        .logo { margin-left: 0; }
+        .sign { margin-right: 0; padding: 0 15px; }
+    }
+
+    section img,  .sec img, .hero img{
+        max-height: 50vh !important; 
+        width: auto !important; 
+        object-fit: contain; 
+        margin-inline: auto;
+    }
+
+    .facilities {
+        flex-direction: row;
+        // flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        // .card { width: 90%; }
+    }
+
+    .sec div {
+        flex-direction: column;
+        .left, .right { 
+            width: 100%; 
+            padding: 20px 5%;
+        }
+        .right {
+            order: -1;
+            @include center;
+        }
+    }
+
+    .comments {
+        .header-content p { width: 90%; }
+        .comment-grid { 
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .pricing {
+        .header-content p { width: 95%; }
+        .users-container { width: 90%; }
+        .cards .card { 
+            flex: 0 1 100%; 
+            max-width: 100%; 
+        }
+    }
+
+    .faq .cards {
+        grid-template-columns: 1fr;
+        .card { width: 100%; }
+    }
+
+    footer {
+        .pri {
+            // flex-direction: column;
+            text-align: center;
+            .left, .right { width: 100%; padding: 0; }
+            .left div { justify-content: center; margin-bottom: 20px; }
+            .right .big-cta, .right .CTA { margin: 10px auto; width: 90%; }
+        }
+        .sec {
+            // flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 30px;
+        }
+    }
+
+    .dashboard-footer .legal-notice{font-size: 14px;}
+
+    //! Reusable Font Adjustments
+    .small { font-size: 12px; }
+    .title { font-size: 20px; }
+}
+
+@media (max-width: 480px) {
+    .hero .cta {
+        flex-direction: column;
+        width: 100%;
+        .big-cta, .CTA { width: 100%; padding: 0; }
+    }
+    .hero .show{display: none;}
+    .facilities {
+        flex-direction: column;
+        gap: 40px;
+        .card { width: 90%; }
+    }
+    .comments .comment-grid { grid-template-columns: 1fr;}
+    footer { .pri, .sec {flex-direction: column;} }
+}
